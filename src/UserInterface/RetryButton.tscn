@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UserInterface/RetryButton.gd" type="Script" id=1]
+
+[node name="RetryButton" type="Button"]
+margin_right = 307.0
+margin_bottom = 111.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Play"
+script = ExtResource( 1 )
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/background.png" type="Texture" id=1]
+[ext_resource path="res://src/UserInterface/RetryButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInterface/Quit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/ui_theme.tres" type="Theme" id=4]
+[ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=5]
+
+[node name="EndScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2
+
+[node name="Title" parent="." instance=ExtResource( 5 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -218.0
+margin_right = 494.0
+margin_bottom = -161.0
+text = "Congratulations, you finished the game!"
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -153.0
+margin_top = -111.0
+margin_right = 127.0
+margin_bottom = -46.0
+text = "Your Final Score is %s
+You Died %s Times"
+align = 1
+
+[node name="Menu" type="VSplitContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -153.0
+margin_top = 37.0
+margin_right = 154.0
+margin_bottom = 272.0
+
+[node name="Play" parent="Menu" instance=ExtResource( 2 )]
+text = "Play Again"
+
+[node name="Quit" parent="Menu" instance=ExtResource( 3 )]
+margin_top = 123.0
+margin_bottom = 235.0
